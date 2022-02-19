@@ -3,15 +3,14 @@
 {% block content %}
 <h1>Job List</h1>
 
-{% for job in jobs %}
-<a href="{% url 'detail_jobs' job.id %}">
+
+
     <span>{{ job.company }}</span>
     <p>Job Title: {{ job.job_title}}</p>
     <p>Application Submission Date: {{ job.date }}</p>
     <p>Description: {{ job.description }}</p>
-</a>
 
-{% endfor %}
+
 
 
 {% endblock %}
