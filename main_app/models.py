@@ -1,5 +1,6 @@
 from datetime import date
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -11,3 +12,6 @@ class Jobs(models.Model):
 
     def __str__(self):
         return self.company
+
+    def get_absolute_url(self):
+        return reverse('detail_jobs', kwargs={'job_id': self.id})

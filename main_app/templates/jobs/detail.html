@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Job List</h1>
+
+<h1>{{job.company}}'s Details</h1>
+
+<span>{{ job.company }}</span>
+<p>Job Title: {{ job.job_title}}</p>
+<p>Application Submission Date: {{ job.date }}</p>
+<p>Description: {{ job.description }}</p>
+
+<a href="{% url 'update_jobs' job.id %}" class="btn">Edit</a>
+<a href="{% url 'delete_jobs' job.id %}" class="btn">Delete</a>
 
 
-
-    <span>{{ job.company }}</span>
-    <p>Job Title: {{ job.job_title}}</p>
-    <p>Application Submission Date: {{ job.date }}</p>
-    <p>Description: {{ job.description }}</p>
 
 
 
