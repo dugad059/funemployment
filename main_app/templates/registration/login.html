@@ -14,11 +14,31 @@
 
 
 <body>
-    <a href="{% url 'login' %}">
-        <h1>LOG IN BITCHES</h1>
-    </a>
-    <a href="{% url 'signup' %}">Sign Up</a>
+    <h1>Log In</h1>
+
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Log In" class="btn">
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
     
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
