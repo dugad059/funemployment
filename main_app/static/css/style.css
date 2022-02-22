@@ -1,6 +1,45 @@
+.home-header {
+   height: 70em;
+}
 
-body{
-    background-color: grey;
-   
+.bton-div{
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.home-head{
+    margin-bottom: 7%;
+}
+
+.img-home{
+    border-radius: 5%;
+}
+
+#hom_btn{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+#a-home-btn{
+    width: 50%;
+    margin: 5px;
    
 }
+
+p {
+    max-width: 35em;
+}
+
+section{
+    padding: 4em 0;
+}
+
+@media screen and (max-width: 600px) {
+    .home-header{
+        height: 50em;
+        margin: 5%;
+    }
+}
+
+
