@@ -1,5 +1,9 @@
 .home-header{
-    height: 45em;
+    height: 35em;
+}
+
+.home-head{
+    text-size-adjust: auto;
 }
 
 .img-home{
@@ -30,6 +34,7 @@
         margin-top: 0;
         margin-bottom: 5%;
     }
+  
 }
 
 @media screen and (max-width: 992px) {
@@ -47,7 +52,7 @@
 
 @media screen and (max-width: 1200px) {
     .home-header{
-        height: 45em;
+        height: 30em;
         margin: 5%;
     }
 
