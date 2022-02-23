@@ -1,14 +1,13 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
 
+<h4 class="center-align">Are you sure you want to delete {{object.company}}???</h4>
 
-<h4>Are you sure you want to DELETE {{object.company}}</h4>
-
-<form action="" method="POST">
+<form action="" method="POST" class="center-align">
     {% csrf_token %}
-    <input type="submit" value="DELETE" class="btn">
-    <a href="{% url 'detail_jobs' object.id %}" class="btn">Cancel</a>
+    <input type="submit" value="DELETE" class="btn red accent-3">
+    <a href="{% url 'detail_jobs' object.id %}" class="btn blue darken-1">Cancel</a>
 </form>
 
 {% endblock %}

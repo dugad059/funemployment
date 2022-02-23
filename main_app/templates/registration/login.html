@@ -13,32 +13,16 @@
 </head>
 
 
-<body>
-    <h1>Log In</h1>
+<h1 class="center-align">Log In</h1>
 
+<div class="container">
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Log In" class="btn">
+        <input type="submit" value="Log In" class="btn-large right blue darken-1 right">
         <input type="hidden" name="next" value="{{ next }}">
     </form>
-    
-</body>
+</div>
+
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,6 +10,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
+"""
+=============================
+      MAIN ROUTES
+=============================
+
+"""
 
 def home(request):
     return render(request, 'home.html')
@@ -27,6 +33,13 @@ def signup(request):
     form = UserCreationForm()
     context = {'form' : form, 'error_message' : error_message}
     return render(request, 'registration/signup.html', context)
+
+"""
+=============================
+      JOBS ROUTES
+=============================
+
+"""
 
 @login_required
 def index_jobs(request):

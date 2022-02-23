@@ -2,19 +2,27 @@
 
 {% block content %}
 
-<h1>{{job.company}}'s Details</h1>
+<h1 class="center-align">{{job.company}}'s Details</h1>
 
-<span>{{ job.company }}</span>
-<p>Job Title: {{ job.job_title}}</p>
-<p>Application Submission Date: {{ job.date }}</p>
-<p>Description: {{ job.description }}</p>
+<div class="container">
+    <div class="row">
+        <div class="col s8 ">
+            <div class="left-align">
+                <span class="flow-text">{{ job.company }}</span>
+                <p>Job Title: {{ job.job_title}}</p>
+                <p>Submission Date: {{ job.date }}</p>
+                <p>Notes: {{ job.description }}</p>
 
-<a href="{% url 'update_jobs' job.id %}" class="btn">Edit</a>
-<a href="{% url 'delete_jobs' job.id %}" class="btn">Delete</a>
-
-
-
-
+                <a href="{% url 'update_jobs' job.id %}" class="btn-floating blue darken-1">
+                    <i class="material-icons">edit_note</i>
+                </a>
+                <a href="{% url 'delete_jobs' job.id %}" class="btn-floating red accent-3">
+                    <i class="material-icons">delete</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}

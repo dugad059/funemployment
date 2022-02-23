@@ -1,14 +1,5 @@
-.home-header {
-   height: 70em;
-}
-
-.bton-div{
-    margin-top: 10%;
-    margin-bottom: 5%;
-}
-
-.home-head{
-    margin-bottom: 7%;
+.home-header{
+    height: 45em;
 }
 
 .img-home{
@@ -17,8 +8,10 @@
 
 #hom_btn{
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 5%;
+}
+
+.bton-div{
+    margin-top: 7%;
 }
 
 #a-home-btn{
@@ -27,18 +20,40 @@
    
 }
 
-p {
-    max-width: 35em;
-}
-
-section{
-    padding: 4em 0;
-}
-
 @media screen and (max-width: 600px) {
     .home-header{
         height: 50em;
         margin: 5%;
+    }
+
+     .bton-div{
+        margin-top: 0;
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .home-header{
+        height: 45em;
+        margin: 5%;
+    }
+
+    .bton-div{
+        margin-top: 0;
+        margin-bottom: 5%;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .home-header{
+        height: 45em;
+        margin: 5%;
+    }
+
+    .bton-div{
+        margin-top: 0;
+        margin-bottom: 5%;
     }
 }
 

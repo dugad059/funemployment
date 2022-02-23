@@ -1,20 +1,22 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
 
 {% if object %}
-<h1>Edit {{object.company}}</h1>
+<h1 class="center-align">Edit {{object.company}}</h1>
 {% else %}
-<h1>Submit Application</h1>
+<h1 class="center-align">Submit Application</h1>
 {% endif %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Sumbit"
+        class="btn-large right blue darken-1"
+        >
+    </form>
+</div>
 
-    <input type="submit" value="Sumbit">
-</form>
 
 {% endblock %}

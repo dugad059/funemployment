@@ -12,20 +12,19 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 </head>
 
+<h1 class="center-align">Sign Up</h1>
 
-<body>
-    <h1>Sign Up</h1>
+{% if error_message %}
+<p class="center-align" style="color:red">{{ error_message }}</p>
+{% endif %}
 
-    {% if error_message %}
-    <p>{{ error_message }}</p>
-    {% endif %}
-
+<div class="container">
     <form method="post" action="{% url 'signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value='Sign Up' class="btn">
+        <input type="submit" value='Sign Up'  class="btn-large right blue darken-1 right">
     </form>
+</div>
 
-</body>
 
 </html>
