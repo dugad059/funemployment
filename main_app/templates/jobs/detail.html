@@ -23,6 +23,71 @@
         </div>
     </div>
 </div>
+<hr>
 
+<div class="container">
+    <div class="row">
+        <div class="col s12 m5">
+            <h3>Reachouts</h3>
+            <form action="{% url 'add_reachout' job.id %}" method="post">
+                {% csrf_token %}
+                {{ reout_form.as_p }}
+                <input type="submit" class="btn blue darken-1 right" value="Added Reachout" />
+            </form>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Contact Name</th>
+                        <th>Source</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reach in job.reout_set.all %}
+                    <tr>
+                        <td>{{ reach.date }}</td>
+                        <td>{{ reach.reout_name }}</td>
+                        <td>{{ reach.source }}</td>
+                        <td>{{ reach.notes }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="col s12 m5 offset-m2">
+            <h3>Responses</h3>
+            <form action="{% url 'add_response' job.id %}" method="post">
+                {% csrf_token %}
+                {{ resp_form.as_p }}
+                <input type="submit" class="btn blue darken-1 right" value="Added Response" />
+            </form>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Response Name</th>
+                        <th>Source</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for response in job.resp_set.all %}
+                    <tr>
+                        <td>{{ response.date }}</td>
+                        <td>{{ response.resp_name }}</td>
+                        <td>{{ response.source }}</td>
+                        <td>{{ response.notes }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+  
+  
 
 {% endblock %}
