@@ -1,4 +1,3 @@
-from atexit import register
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Jobs
