@@ -2,17 +2,19 @@
 
 {% block content %}
 
-<h1 class="center-align">{{job.company}}'s Details</h1>
+<h1 class="center-align">The {{job.company}} Application</h1>
 
 <div class="container">
     <div class="row">
-        <div class="col s8 ">
-            <div class="left-align">
-                <span class="flow-text">{{ job.company }}</span>
-                <p>Job Title: {{ job.job_title}}</p>
-                <p>Submission Date: {{ job.date }}</p>
-                <p>Notes: {{ job.description }}</p>
-
+        <div class="col s12 ">
+            <div class="center-align">
+                <h4>Job Title:</h4> 
+                    <h5>{{ job.job_title}}</h5>
+                <h4>Submission Date:</h4> 
+                <h5>{{ job.date }}</h5>
+                <h4>Notes:</h4> 
+                    <h5>{{ job.description }}</h5>
+                <br>
                 <a href="{% url 'update_jobs' job.id %}" class="btn-floating blue darken-1">
                     <i class="material-icons">edit_note</i>
                 </a>
@@ -55,7 +57,7 @@
                 </tbody>
             </table>
         </div>
-        
+
         <div class="col s12 m5 offset-m2">
             <h3>Responses</h3>
             <form action="{% url 'add_response' job.id %}" method="post">
@@ -87,7 +89,7 @@
     </div>
 </div>
 
-  
-  
+
+
 
 {% endblock %}
