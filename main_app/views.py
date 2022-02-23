@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Jobs
+from .forms import ReoutForm, RespForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -48,7 +49,31 @@ def index_jobs(request):
 @login_required
 def detail_jobs(request, job_id):
     job = Jobs.objects.get(id=job_id)
-    return render(request, 'jobs/detail.html', { 'job' : job })
+    reout_form = ReoutForm()
+    resp_form = RespForm()
+    return render(
+        request, 
+        'jobs/detail.html', 
+        { 'job' : job,
+         'reout_form' : reout_form,
+        'resp_form' : resp_form,
+        })
+
+def add_reachout(request, job_id):
+    form = ReoutForm(request.POST)
+    if form.is_valid():
+        new_reach = form.save(commit=False)
+        new_reach.job_id = job_id
+        new_reach.save()
+    return redirect('detail_jobs', job_id=job_id)
+
+def add_response(request, job_id):
+    form = RespForm(request.POST)
+    if form.is_valid():
+        new_reach = form.save(commit=False)
+        new_reach.job_id = job_id
+        new_reach.save()
+    return redirect('detail_jobs', job_id=job_id)
 
 class JobCreate(LoginRequiredMixin, CreateView):
     model = Jobs
