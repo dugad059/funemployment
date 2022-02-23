@@ -67,3 +67,4 @@ class JobUpdate(LoginRequiredMixin, UpdateView):
 class JobDelete(LoginRequiredMixin, DeleteView):
     model = Jobs
     success_url = '/jobs/'
+
