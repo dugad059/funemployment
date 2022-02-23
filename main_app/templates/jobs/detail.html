@@ -8,12 +8,12 @@
     <div class="row">
         <div class="col s12 ">
             <div class="center-align">
-                <h4>Job Title:</h4> 
-                    <h5>{{ job.job_title}}</h5>
-                <h4>Submission Date:</h4> 
+                <h4>Job Title:</h4>
+                <h5>{{ job.job_title}}</h5>
+                <h4>Submission Date:</h4>
                 <h5>{{ job.date }}</h5>
-                <h4>Notes:</h4> 
-                    <h5>{{ job.description }}</h5>
+                <h4>Notes:</h4>
+                <h5>{{ job.description }}</h5>
                 <br>
                 <a href="{% url 'update_jobs' job.id %}" class="btn-floating blue darken-1">
                     <i class="material-icons">edit_note</i>
