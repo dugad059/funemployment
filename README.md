@@ -15,13 +15,13 @@ This application allows you to organize all of your job applications during your
 ## Screenshots
 
 Login Page
-![](images/loginPage.png)
+![](images/LoginPage1.png)
 
 Index Page
-![](images/IndexPage.png)
+![](images/IndexPage1.png)
 
 Detail Page
-![](images/DetailPage.png)
+![](images/DetailPage1.png)
 
 [Click HERE](https://funemployment059.herokuapp.com/) to start tracking your job applications!!
 
