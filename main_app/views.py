@@ -16,10 +16,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 =============================
 
 """
-
-def home(request):
-    return render(request, 'home.html')
-
 def signup(request):
     error_message = ''
     if request.method == 'POST':
@@ -33,6 +29,9 @@ def signup(request):
     form = UserCreationForm()
     context = {'form' : form, 'error_message' : error_message}
     return render(request, 'registration/signup.html', context)
+
+def home(request):
+    return render(request, 'home.html')
 
 """
 =============================
